@@ -124,6 +124,7 @@
 \sloppy
 \allowdisplaybreaks 
 }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% To include code listings use the listings package. 
 %% Also load spverbatim for a basic verbatim environment which can line break if needed
@@ -213,6 +214,12 @@ columns=fixed
 \newcommand{\xsbnum}[1]{x_{#1}}
 \newcommand{\boo}{\mathrm{boo}}
 \newcommand{\End}{\mathrm{End}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% To enable 'faked' commuting diagrams
+\newcommand{\mapright}[1]{{\stackrel{#1}{\longrightarrow}}}
+\newcommand{\mapdown}[1]{\Big\downarrow{\scriptstyle{#1}}} 
+\newcommand{\tab}{&}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Define front matter
@@ -585,7 +592,7 @@ This text should be printed verbatim with a linebreak here
 
 \bigskip
 
-This next \verb=verbatim= but with spaces shown\footnote{The word verbatim used inline verbatim.}. 
+This is also \verb=verbatim=\footnote{The word verbatim used inline verbatim.}. 
 
 \bigskip
 A piece \verb=of verbatim text that we are using to test line breaking=.
@@ -620,13 +627,13 @@ Math versions of text symbols: $\$  \_  \ddag  \{  \dots  \}  \dag  \pounds \cop
 
 Math versions of text symbols which disappear in Word: $\P$  $\S$
 
-Math versions of text symbols with boldsymbol: \boldsymbol{$\$  \_  \ddag  \{  \dots  \}  \dag  \pounds \copyright$}
+Math versions of text symbols with boldsymbol: $\boldsymbol{\$  \_  \ddag  \{  \dots  \}  \dag  \pounds \copyright}$
 
-Math versions of text symbols with boldsymbol which disappear in Word: \boldsymbol{$\P$  $\S$}
+Math versions of text symbols with boldsymbol which disappear in Word: $\boldsymbol{\P  \S}$
 
 Keyboard symbols: $+  -  =  <   /  :  !  '  |  [  ]  (  ) > $ 
 
-Keyboard symbols allowed with boldsymbol: \boldsymbol{$+  -  =  <   /  :  !  '  |  [  ]  (  ) > $} 
+Keyboard symbols allowed with boldsymbol:$ \boldsymbol{+  -  =  <   /  :  !  '  |  [  ]  (  ) > }$ 
 
 \noindent 
 But for longer tests we will use the equation environment so that we don't overrun the line if we increase the font size.
@@ -691,15 +698,16 @@ Bold using boldmath, upper case:\boldmath
 A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z  
 \end{equation}\unboldmath
 
-
+\noindent
 Italic, lower case:
 \begin{equation}
 \mathit{a}~\mathit{b}~\mathit{c}~\mathit{d}~\mathit{e}~\mathit{f}~\mathit{g}~\mathit{h}~\mathit{i}~\mathit{j}~\mathit{k}~\mathit{l}~\mathit{m}~\mathit{n}~\mathit{o}~\mathit{p}~\mathit{q}~\mathit{r}~\mathit{s}~\mathit{t}~\mathit{u}~\mathit{v}~\mathit{w}~\mathit{x}~\mathit{y}~\mathit{z}
 \end{equation}
 
+\noindent
 Italic, upper case:
 \begin{equation}
-% \mathit{A}~\mathit{B}~\mathit{C}~\mathit{D}~\mathit{E}~\mathit{F}~\mathit{G}~\mathit{H}~\mathit{I}~\mathit{J}~\mathit{K}~\mathit{L}~\mathit{M}~\mathit{N}~\mathit{O}~\mathit{P}~\mathit{Q}~\mathit{R}~\mathit{S}~\mathit{T}~\mathit{U}~\mathit{V}~\mathit{W}~\mathit{X}~\mathit{Y}~\mathit{Z}
+\mathit{A}~\mathit{B}~\mathit{C}~\mathit{D}~\mathit{E}~\mathit{F}~\mathit{G}~\mathit{H}~\mathit{I}~\mathit{J}~\mathit{K}~\mathit{L}~\mathit{M}~\mathit{N}~\mathit{O}~\mathit{P}~\mathit{Q}~\mathit{R}~\mathit{S}~\mathit{T}~\mathit{U}~\mathit{V}~\mathit{W}~\mathit{X}~\mathit{Y}~\mathit{Z}
 \end{equation}
 
 \noindent 
@@ -744,15 +752,16 @@ Calligraphic (upper case only):
 \mathcal{A} \cdot \mathcal{B} \cdot \mathcal{C} \cdot \mathcal{D} \cdot \mathcal{E} \cdot \mathcal{F} \cdot \mathcal{G} \cdot \mathcal{H} \cdot \mathcal{I} \cdot \mathcal{J} \cdot \mathcal{K} \cdot \mathcal{L} \cdot \mathcal{M} \cdot \mathcal{N} \cdot \mathcal{O} \cdot \mathcal{P} \cdot \mathcal{Q} \cdot \mathcal{R} \cdot \mathcal{S} \cdot \mathcal{T} \cdot \mathcal{U} \cdot \mathcal{V} \cdot \mathcal{W} \cdot \mathcal{X} \cdot \mathcal{Y} \cdot \mathcal{Z}
 \end{equation}
 
+\noindent
 Calligraphic (upper case only) with boldsymbol:
 \begin{equation}
 \boldsymbol{\mathcal{A}  \mathcal{B}  \mathcal{C}  \mathcal{D}  \mathcal{E}  \mathcal{F}  \mathcal{G}  \mathcal{H}  \mathcal{I}  \mathcal{J}  \mathcal{K}  \mathcal{L}  \mathcal{M}  \mathcal{N}  \mathcal{O}  \mathcal{P}  \mathcal{Q}  \mathcal{R}  \mathcal{S}  \mathcal{T}  \mathcal{U}  \mathcal{V}  \mathcal{W}  \mathcal{X}  \mathcal{Y}  \mathcal{Z}}
 \end{equation}
 
 \noindent 
-Binary operators:
+Binary operators: %From comp sym table 50
 \begin{equation}
-\pm \mp \times \div \cdot \ast \star \dagger \ddagger \amalg \cap \cup \uplus \sqcap \sqcup \vee \wedge \oplus \ominus \otimes \circ \bullet \oslash \odot  \bigtriangleup  \triangleleft \triangleright \setminus \wr
+\amalg \ast \bigtriangleup \bullet \cap \cdot \circ \cup \dagger \ddagger \div \mp \odot \ominus \oplus \oslash \otimes \pm \setminus \sqcap \sqcup \star \times \triangleleft \triangleright \uplus \vee \wedge \wr
 \end{equation}
 
 Unknown symbol in Word: $\diamond$ $\bigtriangledown$
@@ -762,98 +771,94 @@ Completely disappears in Word: $\bigcirc$
 \noindent 
 Binary operators with boldsymbol:
 \begin{equation}
-\boldsymbol{\pm \mp \times \div \cdot \ast \star \dagger \ddagger \amalg \cap \cup \uplus \sqcap \sqcup \vee \wedge \oplus \ominus \otimes \circ \bullet \oslash \odot  \bigtriangleup  \triangleleft \triangleright \setminus \wr}
+\boldsymbol{\amalg \ast \bigtriangleup \bullet \cap \cdot \circ \cup \dagger \ddagger \div \mp \odot \ominus \oplus \oslash \otimes \pm \setminus \sqcap \sqcup \star \times \triangleleft \triangleright \uplus \vee \wedge \wr}
 \end{equation}
 
-Unknown symbol in Word: \boldsymbol{$\diamond$ $\bigtriangledown$}
+Unknown symbol in Word: $\boldsymbol{\diamond \bigtriangledown}$
 
-Completely disappears in Word: \boldsymbol{$\bigcirc$}
+Completely disappears in Word: $\boldsymbol{\bigcirc}$
 
 \noindent 
-Relations:
+Relations: %table 88 and 122 except \neq and 112, \in and \ni are in letter like
 \begin{equation}
-\le \leq \ll \subset \subseteq \sqsubseteq \in \vdash \models \ge \geq \gg \supset \supseteq \sqsubseteq \ni \dashv \perp \neq \doteq \approx \cong \equiv \propto \prec \preceq \parallel \| \sim \simeq \asymp \smile \frown \bowtie \succ \succeq \mid
+\approx \asymp \bowtie \cong \dashv \doteq \equiv \geq \gg \leq \ll \frown \mid \models \parallel \perp \prec \preceq \propto \sim \simeq \smile \succ \succeq \vdash
+\sqsubseteq \sqsupseteq \subset \subseteq \supset \supseteq \in \ni
 \end{equation}
 
 \noindent 
 Relations with boldsymbol:
 \begin{equation}
-\boldsymbol{\le \leq \ll \subset \subseteq \sqsubseteq \in \vdash \models \ge \geq \gg \supset \supseteq \sqsubseteq \ni \dashv \perp \neq} \boldsymbol{\doteq \approx \cong \equiv \propto \prec \preceq \parallel \| \sim \simeq \asymp \smile \frown \bowtie \succ \succeq \mid}
+\boldsymbol{\approx \asymp \bowtie \cong \dashv \doteq \equiv \geq \gg \leq \ll \frown \mid \models \parallel \perp \prec \preceq \propto \sim \simeq \smile \succ \succeq \vdash
+\sqsubseteq \sqsupseteq \subset \subseteq \supset \supseteq \in \ni
+}
 \end{equation}
 
 \noindent 
-Negated which work:
-$\not<$ $\not\leq$ $\not\subseteq$  $\not\in$ $\notin$ $\not\vdash$ $\not\models$ $\not>$ $\not\geq$ $\not\supseteq$ $\not=$ $\not\cong$ $\not\prec$ $\not\succ$ $\not\sim$ 
-
-Turn into raw LaTeX-like encoding in Word and look broken in MathJax:
-$\not\le$ $\not\ll$ $\not\ge$ $\not\gg$ $\not\dashv$ $\not\perp$ $\not\doteq$ $\not\propto$ $\not\preceq$ 
-$\not\smile$ $\not\frown$ $\not\bowtie$ $\not\succeq$
-
-Completely disappear in Word:
-$\not\ni$ $\not\subset$ $\not\sqsubseteq$ $\not\supset$ $\not\sqsubseteq$ $\not\approx$ $\not\equiv$ $\not\simeq$ $\not\asymp$ 
-
+Negated relations:
+\begin{equation}
+\not\approx \not\asymp \not\bowtie \not\cong \not\dashv \not\doteq \not\equiv \not\geq \not\gg \not\leq \not\ll \not\frown \not\mid \not\models \not\parallel \not\perp \not\prec \not\preceq \not\propto \not\sim \not\simeq \not\smile \not\succ \not\succeq \not\vdash
+\not\sqsubseteq \not\sqsupseteq \not\subset \not\subseteq \not\supset \not\supseteq \not\in \not\ni
+\not< \not> \not= \neq \notin
+\end{equation}
 
 \noindent 
-Negated with boldsymbol:
-Negated, with boldsymbol, which work:
-\boldsymbol{$\not<$ $\not\leq$ $\not\subseteq$  $\not\in$ $\notin$ $\not\vdash$ $\not\models$ $\not>$ $\not\geq$ $\not\supseteq$ $\not=$ $\not\cong$ $\not\prec$ $\not\succ$ $\not\sim$} 
-
-Turn into raw LaTeX-like encoding in Word and look broken in MathJax:
-\boldsymbol{$\not\le$ $\not\ll$ $\not\ge$ $\not\gg$ $\not\dashv$ $\not\perp$ $\not\doteq$ $\not\propto$ $\not\preceq$ $\not\smile$ $\not\frown$ $\not\bowtie$ $\not\succeq$}
-
-Completely disappear in Word:
-\boldsymbol{$\not\ni$ $\not\subset$ $\not\sqsubseteq$ $\not\supset$ $\not\sqsubseteq$ $\not\approx$ $\not\equiv$ $\not\simeq$ $\not\asymp$} 
+Negated, with boldsymbol:
+\begin{equation}
+\boldsymbol{\not\approx \not\asymp \not\bowtie \not\cong \not\dashv \not\doteq \not\equiv \not\geq \not\gg \not\leq \not\ll \not\frown \not\mid \not\models \not\parallel \not\perp \not\prec \not\preceq \not\propto \not\sim \not\simeq \not\smile \not\succ \not\succeq \not\vdash
+\not\sqsubseteq \not\sqsupseteq \not\subset \not\subseteq \not\supset \not\supseteq \not\in \not\ni
+\not< \not> \not= \neq \notin}
+\end{equation}
 
 \noindent
-Arrows:
+Arrows: %Table 138 and 139
 \begin{equation}
-\leftarrow \gets \Leftarrow \rightarrow \to \Rightarrow \leftrightarrow \Leftrightarrow \mapsto \hookleftarrow \leftharpoonup \leftharpoondown \rightleftharpoons \longleftarrow \Longleftarrow \longrightarrow \Longrightarrow 
+\Downarrow \downarrow \hookleftarrow \hookrightarrow \leftarrow \Leftarrow \Leftrightarrow \leftrightarrow \longleftarrow \Longleftarrow \longleftrightarrow \Longleftrightarrow \longmapsto \Longrightarrow \longrightarrow \mapsto \nearrow \nwarrow \Rightarrow \rightarrow \searrow \swarrow \uparrow \Uparrow \updownarrow \Updownarrow
 \end{equation}
 \begin{equation}
-\longleftrightarrow \Longleftrightarrow \iff \longmapsto \hookrightarrow \rightharpoonup \rightharpoondown \uparrow  \downarrow  \updownarrow  \nearrow \searrow \swarrow \nwarrow
+\leftharpoondown \leftharpoonup \rightharpoondown \rightharpoonup \rightleftharpoons
 \end{equation}
-
-Look odd in MathJax but fine in Word: $\Uparrow$ $\Downarrow$ $\Updownarrow$
 
 \noindent 
 Arrows with boldsymbol:
 \begin{equation}
-\boldsymbol{\leftarrow \gets \Leftarrow \rightarrow \to \Rightarrow \leftrightarrow \Leftrightarrow \mapsto \hookleftarrow \leftharpoonup \leftharpoondown \rightleftharpoons \longleftarrow \Longleftarrow \longrightarrow \Longrightarrow} 
+\boldsymbol{\Downarrow \downarrow \hookleftarrow \hookrightarrow \leftarrow \Leftarrow \Leftrightarrow \leftrightarrow \longleftarrow \Longleftarrow \longleftrightarrow \Longleftrightarrow \longmapsto \Longrightarrow \longrightarrow \mapsto \nearrow \nwarrow \Rightarrow \rightarrow \searrow \swarrow \uparrow \Uparrow \updownarrow \Updownarrow}
 \end{equation}
 \begin{equation}
-\boldsymbol{\longleftrightarrow \Longleftrightarrow \iff \longmapsto \hookrightarrow \rightharpoonup \rightharpoondown \uparrow  \downarrow  \updownarrow  \nearrow \searrow \swarrow \nwarrow}
+\boldsymbol{
+\leftharpoondown \leftharpoonup \rightharpoondown \rightharpoonup \rightleftharpoons} 
 \end{equation}
-
-Look odd in MathJax but fine in Word: \boldsymbol{$\Uparrow$ $\Downarrow$ $\Updownarrow$}
 
 \noindent 
-Other:
+Letter like symbols: %Table 199 and 294 and 417 and 388 and \|
 \begin{equation}
-\aleph \hbar \imath \jmath \ell \wp \Re \Im \prime \emptyset \nabla \surd \partial \top \bot \vdash \dashv \forall \exists \neq  \| \angle \backslash \triangle  \heartsuit \spadesuit \infty
+\| \bot \ell \exists \forall \hbar \Im \imath \jmath \partial \Re \top \wp
+\aleph \emptyset \angle \backslash \infty \nabla \neg \prime \surd \triangle
+\flat \natural \sharp
+\clubsuit \diamondsuit \heartsuit \spadesuit
 \end{equation}
-
-Unknown symbol in Word: $\flat$ $\natural$ $\sharp$ $\clubsuit$ $\diamondsuit$
 
 \noindent 
 Other with boldsymbol:
 \begin{equation}
-\boldsymbol{\aleph \hbar \imath \jmath \ell \wp \Re \Im \prime \emptyset \nabla \surd \partial \top \bot \vdash \dashv \forall \exists \neq  \| \angle \backslash \triangle  \heartsuit \spadesuit \infty}
+\boldsymbol{\| \bot \ell \exists \forall \hbar \Im \imath \jmath \partial \Re \top \wp
+\aleph \emptyset \angle \backslash \infty \nabla \neg \prime \surd \triangle
+\flat \natural \sharp
+\clubsuit \diamondsuit \heartsuit \spadesuit
+}
 \end{equation}
 
-Unknown symbol in Word: \boldsymbol{$\flat$ $\natural$ $\sharp$ $\clubsuit$ $\diamondsuit$}
-
 \noindent 
+Variable sized operators: %Table 72
 \begin{center}
-$\sum \int \oint \prod \coprod \bigcap \bigcup \bigsqcup \bigvee \bigwedge \bigodot \bigotimes \bigoplus \biguplus$
+$\bigcap \bigcup \bigodot \bigoplus \bigotimes \bigsqcup \biguplus \bigvee \bigwedge \coprod \int \oint \prod \sum$ 
 \end{center}
 
-In Word the below are not enlarged - this probably depends on context though in Word equations.
 \begin{equation}
-\sum \int \oint \prod \coprod \bigcap \bigcup \bigsqcup \bigvee \bigwedge \bigodot \bigotimes \bigoplus \biguplus
+\bigcap \bigcup \bigodot \bigoplus \bigotimes \bigsqcup \biguplus \bigvee \bigwedge \coprod \int \oint \prod \sum
 \end{equation}
 
 \noindent 
-Function names:
+Function names: %Table 181
 \begin{equation}
 \arccos \arcsin \arctan \arg \cos \cosh \cot \coth \csc \deg \det 
 \end{equation}
@@ -971,8 +976,6 @@ Horizontal spacing:
 |~|\,|\:|\;|\quad | \qquad |
 \end{equation}
 
-%%In the above I need to add in all the AMS only symbols as the above is taken from Vanilla
-
 \subsubsection[AMS alphabets]{AMS additional: alphabets}
 
 \noindent 
@@ -1008,163 +1011,109 @@ Math Frak, upper case only with boldsymbol:
 \subsubsection[AMS symbols]{AMS additional: symbols}
 
 \noindent 
-AMS arrows
+AMS arrows: %table 141 and 143
 \begin{equation}
-\dashrightarrow \dashleftarrow 
-\end{equation}
-\begin{equation}
-\leftleftarrows \cdot \leftrightarrows \cdot \Lleftarrow \cdot \twoheadleftarrow \cdot \leftarrowtail \cdot \looparrowleft \cdot \leftrightharpoons \cdot \curvearrowleft \cdot \circlearrowleft \cdot \Lsh \cdot \upuparrows \cdot \upharpoonleft \cdot \downharpoonleft \cdot \multimap \cdot 
-\end{equation}
-\begin{equation}
-\leftrightsquigarrow \cdot 
-\rightrightarrows \cdot \rightleftarrows \cdot \Rrightarrow \cdot \twoheadrightarrow \cdot \rightarrowtail \cdot \looparrowright \cdot \rightleftharpoons \cdot \curvearrowright \cdot \circlearrowright \cdot \Rsh \cdot \downdownarrows \cdot \upharpoonright \cdot \downharpoonright \cdot \rightsquigarrow
+\circlearrowleft \circlearrowright \curvearrowleft \curvearrowright \dashleftarrow \dashrightarrow \downdownarrows \leftarrowtail \leftleftarrows \leftrightarrows \leftrightsquigarrow \Lleftarrow \looparrowleft \looparrowright \Lsh \rightarrowtail \rightleftarrows \rightrightarrows \rightsquigarrow \Rsh \twoheadleftarrow \twoheadrightarrow \upuparrows
+\downharpoonleft \downharpoonright \leftrightharpoons \rightleftharpoons \upharpoonleft \upharpoonright
 \end{equation}
 
 AMS arrows with boldsymbol
 \begin{equation}
-\boldsymbol{\dashrightarrow \dashleftarrow 
-\leftleftarrows \leftrightarrows \Lleftarrow \twoheadleftarrow \leftarrowtail \looparrowleft \leftrightharpoons \curvearrowleft \circlearrowleft \Lsh \upuparrows \upharpoonleft \downharpoonleft \multimap 
-\leftrightsquigarrow 
-\rightrightarrows \rightleftarrows \Rrightarrow \twoheadrightarrow \rightarrowtail \looparrowright \rightleftharpoons \curvearrowright \circlearrowright \Rsh \downdownarrows \upharpoonright \downharpoonright \rightsquigarrow}
+\boldsymbol{\circlearrowleft \circlearrowright \curvearrowleft \curvearrowright \dashleftarrow \dashrightarrow \downdownarrows \leftarrowtail \leftleftarrows \leftrightarrows \leftrightsquigarrow \Lleftarrow \looparrowleft \looparrowright \Lsh \rightarrowtail \rightleftarrows \rightrightarrows \rightsquigarrow \Rsh \twoheadleftarrow \twoheadrightarrow \upuparrows
+\downharpoonleft \downharpoonright \leftrightharpoons \rightleftharpoons \upharpoonleft \upharpoonright
+}
 \end{equation}
 
 \noindent
-AMS negated arrows
+AMS negated arrows: %table 142
 \begin{equation}
-\nleftarrow \cdot \nrightarrow
-\nLeftarrow \cdot \nRightarrow
-\nleftrightarrow \cdot \nLeftrightarrow
+\nLeftarrow \nleftarrow \nLeftrightarrow \nleftrightarrow \nRightarrow \nrightarrow
 \end{equation}
 
 \noindent
 AMS negated arrows with boldsymbol
 \begin{equation}
-\boldsymbol{\nleftarrow \nrightarrow
-\nLeftarrow \nRightarrow
-\nleftrightarrow \nLeftrightarrow}
+\boldsymbol{\nLeftarrow \nleftarrow \nLeftrightarrow \nleftrightarrow \nRightarrow \nrightarrow}
 \end{equation}
 
 \noindent
-AMS binary operation symbols
+AMS binary operation symbols: %comp symb table 51
 \begin{equation}
-\smallsetminus \Cap \doublebarwedge \circleddash \centerdot
-\end{equation}
-\begin{equation}
-\dotplus \cdot \Cup \cdot \barwedge \cdot \veebar \cdot \boxminus \cdot \boxtimes \cdot \boxplus \cdot \divideontimes \cdot \ltimes \cdot \rtimes \cdot \leftthreetimes \cdot \rightthreetimes \cdot \curlywedge \cdot \curlyvee \cdot \circledast \cdot \circledcirc \cdot \intercal
+\barwedge \boxdot \boxminus \boxplus \boxtimes \Cap \centerdot \circledast \circledcirc \circleddash \Cup \curlyvee \curlywedge \divideontimes \dotplus \doublebarwedge \intercal \leftthreetimes \ltimes \rightthreetimes \rtimes \smallsetminus \veebar 
 \end{equation}
 
 \noindent
 AMS binary operation symbols with boldsymbol
 \begin{equation}
-\boldsymbol{\dotplus \smallsetminus \Cap \Cup \barwedge \veebar \doublebarwedge \boxminus \boxtimes \boxplus \divideontimes \ltimes \rtimes \leftthreetimes \rightthreetimes \curlywedge \curlyvee \circleddash \circledast \circledcirc \centerdot \intercal}
+\boldsymbol{\barwedge \boxdot \boxminus \boxplus \boxtimes \Cap \centerdot \circledast \circledcirc \circleddash \Cup \curlyvee \curlywedge \divideontimes \dotplus \doublebarwedge \intercal \leftthreetimes \ltimes \rightthreetimes \rtimes \smallsetminus \veebar}
 \end{equation}
 
 \noindent
-AMS Greek and Hebrew letters
+AMS Greek and Hebrew letters: %table 194 and 185
 \begin{equation}
-\digamma
-\end{equation}
-\begin{equation}
-\varkappa \beth \daleth \gimel 
+\digamma \varkappa \beth \gimel \daleth 
 \end{equation}
 
 \noindent
-AMS Greek and Hebrew letters with boldsymbol
+AMS Greek and Hebrew letters with boldsymbol:
 \begin{equation}
-\boldsymbol{\digamma \varkappa \beth \daleth \gimel} 
+\boldsymbol{\digamma \varkappa \beth \gimel \daleth} 
 \end{equation}
 
 \noindent
-AMS delimiters
+AMS delimiters: %table 212
 \begin{equation}
 \ulcorner \urcorner \llcorner \lrcorner
 \end{equation}
 
 \noindent
-AMS delimiters with boldsymbol
+AMS delimiters with boldsymbol:
 \begin{equation}
 \boldsymbol{\ulcorner \urcorner \llcorner \lrcorner}
 \end{equation}
 
 \noindent
-AMS relational symbols
+AMS relational and negated relational symbols: %table 89 and 123 and 131 and 113 and 90
 \begin{equation}
-\leqslant \lessapprox \backsim \subseteqq
+\approxeq \backepsilon \backsim \backsimeq \because \between \Bumpeq \bumpeq \circeq \curlyeqprec \curlyeqsucc \doteqdot \eqcirc \fallingdotseq \multimap \pitchfork \precapprox \preccurlyeq \precsim \risingdotseq \shortmid \shortparallel \smallfrown \smallsmile \succapprox \succcurlyeq \succsim \therefore \thickapprox \thicksim \varpropto \Vdash \vDash \Vvdash
 \end{equation}
 \begin{equation}
-\leqq \cdot \eqslantless \cdot \lesssim \cdot \approxeq \cdot \lessdot \cdot \lll \cdot \lessgtr \cdot \lesseqgtr \cdot \lesseqqgtr \cdot \doteqdot \cdot \risingdotseq \cdot \fallingdotseq \cdot \backsimeq \cdot \Subset \cdot \sqsubset \cdot 
+\eqslantgtr \eqslantless \geqq \geqslant \ggg \gnapprox \gneq \gneqq \gnsim \gtrapprox \gtrdot \gtreqless \gtreqqless \gtrless \gtrsim \gvertneqq \leqq \leqslant \lessapprox \lessdot \lesseqgtr \lesseqqgtr \lessgtr \lesssim \lll \lnapprox \lneq \lneqq \lnsim \lvertneqq \ngeq \ngeqq \ngeqslant \ngtr \nleq \nleqq \nleqslant \nless
 \end{equation}
 \begin{equation}
-\preccurlyeq \precsim \precapprox \vartriangleleft \geqslant \gtrapprox 
-\end{equation}
-\begin{equation}
-\curlyeqprec \cdot \trianglelefteq \cdot \vDash \cdot \Vvdash \cdot \smallsmile \cdot \smallfrown \cdot \bumpeq \cdot \Bumpeq \cdot \geqq \cdot \eqslantgtr \cdot \gtrsim \cdot  \gtrdot \cdot \ggg 
-\end{equation}
-\begin{equation}
-\thicksim \thickapprox \supseteqq \succcurlyeq \succsim \succapprox \vartriangleright 
-\end{equation}
-\begin{equation}
-\gtrless \cdot \gtreqless \cdot \gtreqqless \cdot \eqcirc \cdot \circeq \cdot \triangleq  \cdot \Supset \cdot \sqsupset \cdot \curlyeqsucc \cdot  \trianglerighteq \cdot \Vdash \cdot 
-\end{equation}
-\begin{equation}
-\shortmid \shortparallel \between \varpropto \blacktriangleleft \backepsilon \blacktriangleright
-\end{equation}
-\begin{equation}
-\pitchfork \cdot  \therefore \cdot  \because
+\blacktriangleleft \blacktriangleright \ntriangleleft \ntrianglelefteq \ntriangleright \ntrianglerighteq \trianglelefteq \triangleq \trianglerighteq \vartriangleleft \vartriangleright
+\nsubseteq \nsupseteq \nsupseteqq \sqsubset \sqsupset \Subset \subseteqq \subsetneq \subsetneqq \Supset \supseteqq \supsetneq \supsetneqq \varsubsetneq \varsubsetneqq \varsupsetneq \varsupsetneqq
+\ncong \nmid \nparallel \nprec \npreceq \nshortmid \nshortparallel \nsim \nsucc \nsucceq \nvDash \nvdash \nVDash \precnapprox \precnsim \succnapprox \succnsim
 \end{equation}
 
 \noindent
-AMS relational symbols with boldsymbol
+AMS relational and negated relational symbols with boldsymbol:
 \begin{equation}
-\boldsymbol{\leqq \leqslant \eqslantless \lesssim \lessapprox \approxeq \lessdot \lll \lessgtr \lesseqgtr \lesseqqgtr \doteqdot \risingdotseq \fallingdotseq \backsim \backsimeq \subseteqq \Subset \sqsubset \preccurlyeq \curlyeqprec \precsim \precapprox \vartriangleleft \trianglelefteq \vDash \Vvdash \smallsmile \smallfrown \bumpeq \Bumpeq} 
+\boldsymbol{\approxeq \backepsilon \backsim \backsimeq \because \between \Bumpeq \bumpeq \circeq \curlyeqprec \curlyeqsucc \doteqdot \eqcirc \fallingdotseq \multimap \pitchfork \precapprox \preccurlyeq \precsim \risingdotseq \shortmid \shortparallel \smallfrown \smallsmile \succapprox \succcurlyeq \succsim \therefore \thickapprox \thicksim \varpropto \Vdash \vDash \Vvdash}
 \end{equation}
 \begin{equation}
-\boldsymbol{\geqq \geqslant \eqslantgtr \gtrsim \gtrapprox  \gtrdot \ggg \gtrless \gtreqless \gtreqqless \eqcirc \circeq \triangleq \thicksim \thickapprox \supseteqq \Supset \sqsupset \succcurlyeq \curlyeqsucc \succsim \succapprox \vartriangleright \trianglerighteq \Vdash \shortmid \shortparallel \between \pitchfork \varpropto \blacktriangleleft \therefore \backepsilon \blacktriangleright \because}
-\end{equation}
-
-\noindent
-AMS negated relational symbols
-\begin{equation}
-\nleq \nleqslant \nleqq \lneq  \lvertneqq \lnapprox \nprec \npreceq \precnapprox \nshortmid \cdot \nmid
+\boldsymbol{\eqslantgtr \eqslantless \geqq \geqslant \ggg \gnapprox \gneq \gneqq \gnsim \gtrapprox \gtrdot \gtreqless \gtreqqless \gtrless \gtrsim \gvertneqq \leqq \leqslant \lessapprox \lessdot \lesseqgtr \lesseqqgtr \lessgtr \lesssim \lll \lnapprox \lneq \lneqq \lnsim \lvertneqq \ngeq \ngeqq \ngeqslant \ngtr \nleq \nleqq \nleqslant \nless}
 \end{equation}
 \begin{equation}
-\nless \cdot  \lneqq \cdot \lnsim \cdot  \precnsim \cdot \nsim \cdot  \nvdash \cdot \nvDash \cdot \ntriangleleft \cdot \ntrianglelefteq 
-\end{equation}
-\begin{equation}
-\nsubseteq \varsubsetneq \subsetneqq \varsubsetneqq \ngeq \ngeqslant \ngeqq \gneq \gvertneqq \gnapprox \nsucc \nsucceq \succsim \succnapprox 
-\end{equation}
-\begin{equation}
-\subsetneq \cdot  \ngtr \cdot  \gneqq \cdot  \gnsim 
-\end{equation}
-\begin{equation}
-\nshortparallel \nsupseteq \nsupseteqq  \varsupsetneq \supsetneqq \varsupsetneqq
-\end{equation}
-\begin{equation}
-\ncong \cdot  \nparallel \cdot \nvDash \cdot \nVDash \cdot \ntriangleright \cdot \ntrianglerighteq \cdot \supsetneq 
+\boldsymbol{\blacktriangleleft \blacktriangleright \ntriangleleft \ntrianglelefteq \ntriangleright \ntrianglerighteq \trianglelefteq \triangleq \trianglerighteq \vartriangleleft \vartriangleright
+\nsubseteq \nsupseteq \nsupseteqq \sqsubset \sqsupset \Subset \subseteqq \subsetneq \subsetneqq \Supset \supseteqq \supsetneq \supsetneqq \varsubsetneq \varsubsetneqq \varsupsetneq \varsupsetneqq
+\ncong \nmid \nparallel \nprec \npreceq \nshortmid \nshortparallel \nsim \nsucc \nsucceq \nvDash \nvdash \nVDash \precnapprox \precnsim \succnapprox \succnsim}
 \end{equation}
 
 \noindent
-AMS negated relational symbols with boldsymbol
+AMS other symbols: %table 295 and 200 and 289
 \begin{equation}
-\boldsymbol{\nless \nleq \nleqslant \nleqq \lneq \lneqq \lvertneqq \lnsim \lnapprox \nprec \npreceq \precnsim \precnapprox \nsim \nshortmid \nmid \nvdash \nvDash \ntriangleleft \ntrianglelefteq \nsubseteq \subsetneq \varsubsetneq \subsetneqq \varsubsetneqq }
-\end{equation}
-\begin{equation}
-\boldsymbol{\ngtr \ngeq \ngeqslant \ngeqq \gneq \gneqq \gvertneqq \gnsim \gnapprox \nsucc \nsucceq \succsim \succnapprox \ncong \nshortparallel \nparallel \nvDash \nVDash \ntriangleright \ntrianglerighteq \nsupseteq \nsupseteqq \supsetneq \varsupsetneq \supsetneqq \varsupsetneqq}
-\end{equation}
-
-\noindent
-AMS other symbols:
-\begin{equation}
-\vartriangle \triangledown \lozenge \Game \Bbbk \blacktriangle \blacktriangledown \blacklozenge \bigstar \eth \diagup \diagdown
-\end{equation}
-\begin{equation}
-\hbar \cdot \hslash \cdot \square  \cdot \circledS \cdot \angle \cdot \measuredangle \cdot \nexists \cdot \mho \cdot \Finv \cdot \backprime \cdot \varnothing \cdot  \blacksquare \cdot \sphericalangle \cdot \complement 
+\backprime \bigstar \blacklozenge \blacksquare \blacktriangle \blacktriangledown \diagdown \diagup \eth \lozenge \mho \square \triangledown \varnothing \vartriangle
+\Bbbk \circledR \circledS \complement \Finv \Game \hbar \hslash \nexists
+\angle \measuredangle \sphericalangle 
 \end{equation}
 
 \noindent
-AMS other symbols:
+AMS other symbols, boldsymbol:
 \begin{equation}
-\boldsymbol{\hbar \hslash \vartriangle \triangledown \square \lozenge \circledS \angle \measuredangle \nexists \mho \Finv \Game \Bbbk \backprime \varnothing \blacktriangle \blacktriangledown \blacksquare \blacklozenge \bigstar \sphericalangle \complement \eth \diagup \diagdown}
+\boldsymbol{\backprime \bigstar \blacklozenge \blacksquare \blacktriangle \blacktriangledown \diagdown \diagup \eth \lozenge \mho \square \triangledown \varnothing \vartriangle
+\Bbbk \circledR \circledS \complement \Finv \Game \hbar \hslash \nexists
+\angle \measuredangle \sphericalangle}
 \end{equation}
 
 \noindent
@@ -1191,7 +1140,7 @@ x_1, x_2, \dots x_n \quad x_1 + x_2 + \dots + x_n \quad x_1,x_2, \dotsc \quad x_
 \noindent 
 Extra function names and using newcommand:
 \begin{equation}
-\varlimsup \varliminf \varinjlim \varprojlim \boo_{n \in N} \boolim_{n \in N}
+\varlimsup \varliminf \varinjlim \varprojlim \boo_{n \in N} %\boolim_{n \in N}
 \end{equation}
 
 \noindent 
@@ -1266,7 +1215,7 @@ Here is a reference to the above equation (\ref{eqnarrayref}).
 \begin{eqnarray*}
 \sum_{i=1}^{13} 2^i &=& 2^1 + 2^2 + 2^3 + 2^4 + 2^5 + 2^6 + 2^7 + 2^8 + 2^9 + 2^{10} + 2^{11} + 2^{12} + 2^{13}\\
 &=&2 + 4 + 8 + 16 + 32 + 64 + 128 + 256 + 512 + 1024 + 2048 + 4096 + 8192\\
-&=&16382 \qquad\mbox{text in formulas} \mathrm{does not break}
+&=&16382 \qquad\mbox{text in formulas~} \mathrm{does~not~break}
 \end{eqnarray*}
 
 \noindent 
@@ -1518,9 +1467,9 @@ This is a numbered theorem (within the section) in the standard style and hence 
 This is a numbered corollary (numbered with theorems) also in the standard style.
 \end{corollary}
 
-\begin{Proof}
+\begin{proof}
 This is what a proof looks like! 
-\end{Proof}
+\end{proof}
 
 \begin{definition}
 This is a numbered definition (numbered within section but not with theorems) and in the ``definition'' style. The title and number should be bold but the rest of the text should be normal font.
@@ -1589,7 +1538,7 @@ Mathjax can't render any of the specialist packages - is this still true? MathJa
 
 %This must contain a proper begin and end environment otherwise tex4ht gets confused and doesn't finish the par
 %You also can't use ampersands as they are protected in xhtml
-\begin{figure}[!hp]
+\begin{figure}[!htb]
 \PICalt{\begin{equation*}
 \begin{array}{ccc}
  A\tab \mapright{f} \tab B \\
@@ -1600,17 +1549,17 @@ Mathjax can't render any of the specialist packages - is this still true? MathJa
 \caption{Commuting diagram}\label{commute}
 \end{figure}
 
-\subsubsection{amscd}
+%\subsubsection{amscd}
 
-This is amscd but, it can only be used for simple cases as it does not allow diagonal arrows
+%This is amscd but, it can only be used for simple cases as it does not allow diagonal arrows
 
-Also tests use of a math operator in it
-\CDalt{\[\begin{CD}
-S^{\mathcal{W}_\Lambda}\otimes T @>j>> T\\
-@VVV @VV{\End P}V\\
-(S\otimes T)/I @= (Z\otimes T)/J
-\end{CD}
-\]}
+%Also tests use of a math operator in it
+%\CDalt{\[\begin{CD}
+%S^{\mathcal{W}_\Lambda}\otimes T @>j>> T\\
+%@VVV @VV{\End P}V\\
+%(S\otimes T)/I @= (Z\otimes T)/J
+%\end{CD}
+%\]}
 
 %\subsubsection{xymatrix}
 
@@ -1659,22 +1608,22 @@ S^{\mathcal{W}_\Lambda}\otimes T @>j>> T\\
 This is copied over from the experiments made elsewhere. When using these methods we should be able to insert jpg (figure \ref{jpg}), png (figure \ref{png}) and pdf (figure \ref{pdf})
 
 %you need to set the width before you altered the angle because angle alters what the textwidth value is)
-\begin{figure}[!hp]
+\begin{figure}[!htbp]
 \noindent
 \nextalt{This is an alt text for the following image $4$!}
-\includegraphics[width=\textwidth,angle=0]{smile1.jpg}
+\includegraphics[width=0.9\textwidth]{smile.jpg}
 \caption{A jpg}\label{jpg}
 \end{figure}
 
-\begin{figure}[!hp]
+\begin{figure}[!htbp]
 \nextalt{This is an alt text for the following png image $4$!}
-\includegraphics[width=\textwidth,angle=0]{smile2.png}
+\includegraphics[width=0.9\textwidth]{smile.png}
 \caption{A png}\label{png}
 \end{figure}
 
-\begin{figure}[!hp]
+\begin{figure}[!htbp]
 \nextalt{This is an alt text for the following pdf image $4$!}
-\includegraphics[width=\textwidth,angle=0]{smile3.pdf}
+\includegraphics[width=0.9\textwidth]{smile.pdf}
 \caption{A pdf}\label{pdf}
 \end{figure}
 
