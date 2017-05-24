@@ -1,0 +1,275 @@
+<!DOCTYPE html> 
+
+<html
+> 
+<head
+><title
+>Graphics</title> 
+<meta
+ charset="UTF-8"></meta> 
+<meta
+ name="viewport" content="target-densitydpi=device-dpi; width=device-width; initial-scale=1.0; minimum-scale=1.0; user-scalable=yes;"></meta> 
+<meta
+ name="HandheldFriendly" content="True"></meta> 
+<meta
+ name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"></meta> 
+<link
+ rel="stylesheet" type="text/css" href="LaTeXtoPDFandMathJax-AMSStressTest.css"></link> 
+<link
+ rel="stylesheet" type="text/css" href="additional.css"></link> 
+<script
+ type="text/x-mathjax-config"> 
+MathJax.Hub.Config({ explorer:{ subtitle: true }, 
+MatchWebFonts: { 
+matchFor: { "HTML-CSS": true, NativeMML: false, SVG: false }, 
+fontCheckDelay: 2000, 
+fontCheckTimeout: 30 * 1000 
+}, 
+"HTML-CSS": { 
+preferredFont: "STIX",  
+availableFonts: ["STIX","TeX"],  
+webFont: "STIX-Web",  
+linebreaks: { automatic: true, width: "60% container" } 
+}, 
+SVG: {  
+font: "STIX-Web", 
+linebreaks: { automatic: true, width: "60% container" } 
+}}); 
+</script> 
+<script
+ type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script> 
+<style
+ type="text/css"> 
+".MathJax_MathML" {text-indent: 0;} 
+</style> 
+</head><body
+>
+<!--l. 1485
+--><div
+ class="crosslinks"><p
+ class="noindent">[<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestli5.html">next</a>] [<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestse4.html">prev</a>] [<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestse4.html#tailLaTeXtoPDFandMathJax-AMSStressTestse4.html">prev-tail</a>] [<a
+ href="#tailLaTeXtoPDFandMathJax-AMSStressTestse5.html">tail</a>] [<a
+ href="LaTeXtoPDFandMathJax-AMSStressTest.html#LaTeXtoPDFandMathJax-AMSStressTestse5.html">up</a>] </p></div>
+<h3
+ class="sectionHead"><span
+ class="titlemark">5    </span> <a
+ href="LaTeXtoPDFandMathJax-AMSStressTest.html#QQ2-11-24" id="x11-230005">Graphics</a></h3>
+<!--l. 1488
+--><p
+ class="nopar">
+</p>
+<h4
+ class="subsectionHead"><span
+ class="titlemark">5.1    </span> <a
+ href="LaTeXtoPDFandMathJax-AMSStressTest.html#QQ2-11-25" id="x11-240005.1">Standard graphics</a></h4>
+<!--l. 1491
+--><p
+ class="nopar">This section looks only at graphics available without the graphics packages, that is, internal to
+vanilla <span
+ class="LATEX">L<span
+ class="A">A</span><span
+ class="TEX">T<span
+ class="E">E</span>X</span></span>. Kopka and Daly <span
+ class="cite">[<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestli5.html#XKopkaDaly">1</a>]</span> explain that &#x201C;Standard <span
+ class="LATEX">L<span
+ class="A">A</span><span
+ class="TEX">T<span
+ class="E">E</span>X</span></span>does actually contain the
+means to make primative drawings on its own&#x201D; and they consider only the facets of picture
+that are in standard <span
+ class="LATEX">L<span
+ class="A">A</span><span
+ class="TEX">T<span
+ class="E">E</span>X</span></span>, not those that require additional packages. This is what we test
+as a basic starting point in the vanilla stress test.
+</p><!--l. 1501
+--><p
+ class="nopar"><img
+ src="LaTeXtoPDFandMathJax-AMSStressTest1x.png" alt="\begin {picture}(320,100)\thinlines \usebox {\frametext } \end {picture}"></img>
+</p>
+<hr
+ class="figure"></hr><div
+ class="figure">
+                                                                                       
+                                                                                       
+<a
+ id="x11-240011"></a>
+                                                                                       
+                                                                                       
+<!--l. 1510
+--><p
+ class="nopar"><img
+ src="LaTeXtoPDFandMathJax-AMSStressTest2x.png" alt=" \begin {picture}(320,100)\thicklines \framebox (320,100){Not made earlier!} \put (0,0){\vector (-1,1){20}} \put (0,100){\vector (-1,-1){20}} \put (-320,100){\vector (1,-1){20}} \put (-320,0){\vector (1,1){20}} \put (-80,50){\circle {100}} \put (-240,50){\circle {100}} \put (-160,50){\oval (100,30)} \put (-320,50){\line (1,0){80}} \put (0,50){\line (-1,0){80}} \qbezier (-240,0)(-160,50)(-80,0) \end {picture} "></img>
+<br
+></br> </p><div
+ class="caption"><span
+ class="id">Figure&#xA0;1: </span><span
+ class="content">Example of picture environment</span></div><!--tex4ht:label?: x11-240011 
+-->
+                                                                                       
+                                                                                       
+</div><hr
+ class="endfigure"></hr>
+<!--l. 1528
+--><p
+ class="noindent">All graphics should be made to float with here, page and rule breaking allowed and
+referenced to ensure that the different formats can all deal with the graphics as are best
+suited. This is where figure <a
+ href="#x11-240011">1<!--tex4ht:ref: picture1 
+--></a> is.
+</p>
+<h4
+ class="subsectionHead"><span
+ class="titlemark">5.2    </span> <a
+ href="LaTeXtoPDFandMathJax-AMSStressTest.html#QQ2-11-27" id="x11-250005.2">Commutative diagrams: looking for a single, accepted way, which works</a></h4>
+<!--l. 1535
+--><p
+ class="nopar">
+</p>
+<h5
+ class="subsubsectionHead"><span
+ class="titlemark">5.2.1    </span> <a
+ href="LaTeXtoPDFandMathJax-AMSStressTestli1.html#QQ2-11-28" id="x11-260005.2.1">array</a></h5>
+<!--l. 1537
+--><p
+ class="nopar">Mathjax can&#x2019;t render any of the specialist packages - is this still true? MathJax advice was to
+use array as in figure <a
+ href="#x11-260012">2<!--tex4ht:ref: commute 
+--></a>.
+</p>
+<hr
+ class="figure"></hr><div
+ class="figure">
+                                                                                       
+                                                                                       
+<a
+ id="x11-260012"></a>
+                                                                                       
+                                                                                       
+<!--l. 1548
+--><p
+ class="noindent"><img
+ src="LaTeXtoPDFandMathJax-AMSStressTest3x.png" alt="\begin {equation*} \begin {array}{ccc} A\tab \mapright {f} \tab B \\ \mapdown {g} \tab \tab \mapdown {g'} \\ A^* \tab \mapright {f^*} \tab B^* \end {array} \end {equation*}"></img>
+<br
+></br> </p><div
+ class="caption"><span
+ class="id">Figure&#xA0;2: </span><span
+ class="content">Commuting diagram</span></div><!--tex4ht:label?: x11-260012 
+-->
+                                                                                       
+                                                                                       
+</div><hr
+ class="endfigure"></hr>
+<h4
+ class="subsectionHead"><span
+ class="titlemark">5.3    </span> <a
+ href="LaTeXtoPDFandMathJax-AMSStressTest.html#QQ2-11-30" id="x11-270005.3">Graphicx package</a></h4>
+<!--l. 1608
+--><p
+ class="nopar">This is copied over from the experiments made elsewhere. When using these methods we
+should be able to insert jpg (figure <a
+ href="#x11-270013">3<!--tex4ht:ref: jpg 
+--></a>), png (figure <a
+ href="#x11-270024">4<!--tex4ht:ref: png 
+--></a>) and pdf (figure <a
+ href="#x11-270035">5<!--tex4ht:ref: pdf 
+--></a>)
+</p>
+<hr
+ class="figure"></hr><div
+ class="figure">
+                                                                                       
+                                                                                       
+<a
+ id="x11-270013"></a>
+                                                                                       
+                                                                                       
+<!--l. 1612
+--><p
+ class="nopar"> <img
+ src="./figures/smile.jpg" alt="This is an alt text for the following image $4$!"></img>
+<br
+></br> </p><div
+ class="caption"><span
+ class="id">Figure&#xA0;3: </span><span
+ class="content">A jpg</span></div><!--tex4ht:label?: x11-270013 
+-->
+                                                                                       
+                                                                                       
+</div><hr
+ class="endfigure"></hr>
+<hr
+ class="figure"></hr><div
+ class="figure">
+                                                                                       
+                                                                                       
+<a
+ id="x11-270024"></a>
+                                                                                       
+                                                                                       
+<!--l. 1620
+--><p
+ class="noindent"><img
+ src="./figures/smile.png" alt="This is an alt text for the following png image $4$!"></img>
+<br
+></br> </p><div
+ class="caption"><span
+ class="id">Figure&#xA0;4: </span><span
+ class="content">A png</span></div><!--tex4ht:label?: x11-270024 
+-->
+                                                                                       
+                                                                                       
+</div><hr
+ class="endfigure"></hr>
+<hr
+ class="figure"></hr><div
+ class="figure">
+                                                                                       
+                                                                                       
+<a
+ id="x11-270035"></a>
+                                                                                       
+                                                                                       
+<!--l. 1626
+--><p
+ class="noindent"><img
+ src="./figures/smile.svg" alt="This is an alt text for the following pdf image $4$!"></img>
+<br
+></br> </p><div
+ class="caption"><span
+ class="id">Figure&#xA0;5: </span><span
+ class="content">A pdf</span></div><!--tex4ht:label?: x11-270035 
+-->
+                                                                                       
+                                                                                       
+</div><hr
+ class="endfigure"></hr>
+<!--l. 1630
+--><p
+ class="noindent">And the last thing I do is to reference an equation I used a long while ago (<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestse4.html#x10-18005r10">10<!--tex4ht:ref: alignlab 
+--></a>).
+                                                                                       
+                                                                                       
+                                                                                       
+                                                                                       
+</p>
+<!--l. 1636
+--><div
+ class="crosslinks"><p
+ class="noindent">[<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestli5.html">next</a>] [<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestse4.html">prev</a>] [<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestse4.html#tailLaTeXtoPDFandMathJax-AMSStressTestse4.html">prev-tail</a>] [<a
+ href="LaTeXtoPDFandMathJax-AMSStressTestse5.html">front</a>] [<a
+ href="LaTeXtoPDFandMathJax-AMSStressTest.html#LaTeXtoPDFandMathJax-AMSStressTestse5.html">up</a>] </p></div>
+<!--l. 1636
+--><p
+ class="noindent"><a
+ id="tailLaTeXtoPDFandMathJax-AMSStressTestse5.html"></a> </p> 
+</body> 
+</html>
