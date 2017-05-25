@@ -822,8 +822,8 @@ accent="true">&\#x0332;</\a:mathml mo></\a:mathml munder>}%
 \let\D:displaylines\d:displaylines
 \Configure{displaylines}
    {\ifmmode
-     \def\A:displaylines{\HCode{<\a:mathml mtable displaystyle="true" 
-                                   \mml:class="displaylines">}}%This one may not be correct
+     \def\A:displaylines{\HCode{<\a:mathml mtable displaystyle="true"\Hnewline 
+                                   \mml:class="displaylines">}}
      \def\B:displaylines{\HCode{</\a:mathml mtable>}}%
      \def\C:displaylines{\HCode{<\a:mathml mtr\Hnewline
                               \mml:class="displaylines"><\a:mathml mtd>}}%
@@ -1313,7 +1313,7 @@ accent="true">&\#x0332;</\a:mathml mo></\a:mathml munder>}%
     {\Tg<\a:mathml mtr>}{\Tg</\a:mathml mtr>}
     {\Tg<\a:mathml mtd \mml:class="cases">}{\Tg</\a:mathml mtd>}
 \Configure{matrix}
-   {\Tg<\a:mathml mtable displaystyle="true"
+   {\Tg<\a:mathml mtable displaystyle="true"\Hnewline
         \a:mathml equalrows="false" \a:mathml equalcolumns="false"\Hnewline
           \mml:class="matrix">}
    {\Tg</\a:mathml mtable>}
